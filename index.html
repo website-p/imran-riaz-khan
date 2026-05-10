@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Imran Riaz Khan | Truth Seeker · Journalist · Anchor</title>
+  <!-- INLINE CSS ONLY — Fully responsive, one-page design for Imran Riaz Khan -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
+      background: #fbfbfe;
+      color: #11181c;
+      scroll-behavior: smooth;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    section {
+      padding: 80px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    }
+
+    .hero-section {
+      padding-top: 100px;
+      padding-bottom: 80px;
+      background: linear-gradient(125deg, #f0f4fa 0%, #ffffff 100%);
+      border-bottom: none;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 8vw, 4.6rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #1a4870, #2c6e9e, #0f3552);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .tagline {
+      font-size: clamp(1.15rem, 4vw, 1.65rem);
+      color: #1e4a6b;
+      font-weight: 500;
+      border-left: 5px solid #2c6e9e;
+      padding-left: 22px;
+      margin: 20px 0 24px 0;
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 5vw, 2.4rem);
+      font-weight: 700;
+      color: #0a2942;
+      margin-bottom: 36px;
+      position: relative;
+      display: inline-block;
+    }
+
+    h2:after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 0;
+      width: 70px;
+      height: 4px;
+      background: #2f7eae;
+      border-radius: 4px;
+    }
+
+    /* card and layout */
+    .grid-2 {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: center;
+    }
+
+    .card {
+      flex: 1 1 280px;
+      background: #ffffff;
+      padding: 34px 26px;
+      border-radius: 32px;
+      box-shadow: 0 18px 30px -12px rgba(0, 0, 0, 0.06);
+      transition: all 0.25s ease;
+      border: 1px solid #e9f0f5;
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 35px -14px rgba(0, 32, 64, 0.12);
+      border-color: #bdd9ec;
+    }
+
+    .card-icon {
+      font-size: 48px;
+      margin-bottom: 18px;
+      display: inline-block;
+    }
+
+    .card h3 {
+      font-size: 1.55rem;
+      margin-bottom: 14px;
+      font-weight: 700;
+      color: #1f5a81;
+    }
+
+    .card p {
+      color: #2c3f4b;
+    }
+
+    /* bio + symbol */
+    .bio-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 48px;
+      justify-content: center;
+    }
+
+    .bio-text {
+      flex: 2;
+      min-width: 260px;
+    }
+
+    .bio-text p {
+      font-size: 1.08rem;
+      margin-bottom: 20px;
+      color: #202c35;
+    }
+
+    .bio-highlight {
+      background: #eef4fc;
+      padding: 24px;
+      border-radius: 36px;
+      margin-top: 20px;
+      border-left: 6px solid #2c6e9e;
+    }
+
+    .profile-symbol {
+      background: linear-gradient(145deg, #e2edf7, #f5faff);
+      border-radius: 50%;
+      width: 230px;
+      height: 230px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 22px 34px -12px rgba(0, 0, 0, 0.15);
+      border: 3px solid #c7e0f0;
+    }
+
+    .initials {
+      font-size: 4.2rem;
+      font-weight: 800;
+      color: #1c628b;
+      letter-spacing: 6px;
+    }
+
+    /* achievements / timeline style */
+    .milestone-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .milestone-item {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: #ffffffea;
+      padding: 18px 26px;
+      border-radius: 60px;
+      transition: 0.2s;
+      border: 1px solid #e2eff8;
+      backdrop-filter: blur(2px);
+    }
+
+    .milestone-number {
+      font-size: 1.9rem;
+      font-weight: 800;
+      background: #1f5a8120;
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 100px;
+      color: #1f5a81;
+    }
+
+    .milestone-text {
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: #1d3b4f;
+    }
+
+    .quote-block {
+      background: #0f2f3f;
+      color: #f0f7fc;
+      border-radius: 48px;
+      padding: 48px 32px;
+      text-align: center;
+      margin-top: 48px;
+    }
+
+    .quote-text {
+      font-size: clamp(1.2rem, 4.5vw, 1.8rem);
+      font-style: italic;
+      font-weight: 500;
+      max-width: 780px;
+      margin: 0 auto;
+      line-height: 1.4;
+    }
+
+    .quote-author {
+      margin-top: 24px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      color: #cbe4f5;
+    }
+
+    footer {
+      background: #091e2c;
+      color: #d9e9f5;
+      padding: 56px 0 44px;
+      text-align: center;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 34px;
+      margin: 32px 0 20px;
+      flex-wrap: wrap;
+    }
+
+    .social-icon {
+      background: #173f59;
+      width: 52px;
+      height: 52px;
+      border-radius: 60px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      transition: 0.2s;
+      text-decoration: none;
+      color: #f3f9ff;
+    }
+
+    .social-icon:hover {
+      background: #2e7ea8;
+      transform: scale(1.05);
+      color: white;
+    }
+
+    .contact-email {
+      font-size: 1.1rem;
+      background: #0c2c3e;
+      display: inline-block;
+      padding: 8px 24px;
+      border-radius: 40px;
+    }
+
+    .btn-courage {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 28px;
+      background: transparent;
+      border: 2px solid #2c6e9e;
+      border-radius: 40px;
+      font-weight: 600;
+      color: #1d5d89;
+      transition: 0.2s;
+      text-decoration: none;
+    }
+
+    .btn-courage:hover {
+      background: #2c6e9e;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 60px 0;
+      }
+
+      .hero-section {
+        padding-top: 70px;
+        padding-bottom: 56px;
+      }
+
+      .bio-wrapper {
+        flex-direction: column-reverse;
+        gap: 32px;
+      }
+
+      .profile-symbol {
+        width: 180px;
+        height: 180px;
+      }
+
+      .initials {
+        font-size: 3.2rem;
+      }
+
+      .milestone-item {
+        flex-direction: column;
+        text-align: center;
+        border-radius: 36px;
+        padding: 20px;
+      }
+
+      .milestone-number {
+        margin-bottom: 8px;
+      }
+    }
+
+    hr {
+      margin: 24px 0;
+      border: none;
+      height: 1px;
+      background: linear-gradient(90deg, #c2dfef, transparent);
+    }
+
+    .stat-badge {
+      display: inline-flex;
+      background: #eef2f6;
+      border-radius: 100px;
+      padding: 6px 18px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #1c628b;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section : Imran Riaz Khan -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="bio-wrapper" style="gap: 30px;">
+        <div class="bio-text">
+          <h1>Imran Riaz Khan</h1>
+          <div class="tagline">Journalist • Anchor • Voice of Accountability</div>
+          <p>One of Pakistan’s most fearless and outspoken journalists, Imran Riaz Khan is known for his incisive analysis, hard-hitting questions, and unwavering commitment to the truth. With a career defined by courage, his broadcasts have reshaped political discourse and empowered citizens to demand transparency.</p>
+          <a href="#connect-section" class="btn-courage">Support independent journalism →</a>
+        </div>
+        <div class="profile-symbol">
+          <span class="initials">IRK</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About & core philosophy -->
+  <section>
+    <div class="container">
+      <h2>The Crusade for Truth</h2>
+      <div class="bio-wrapper" style="margin-top: 20px;">
+        <div class="bio-text">
+          <p><strong>Imran Riaz Khan</strong> rose to prominence through his digital and TV platforms, becoming a household name for his blunt, evidence-based commentary. His show “Speaking Truth” and social media presence have broken countless stories, holding the powerful accountable regardless of affiliation.</p>
+          <p>Recognized internationally for his fearless reporting, Imran has faced adversity with resilience, becoming a symbol of journalistic integrity. His dedication to uncovering facts and amplifying ordinary voices makes him a transformative media personality.</p>
+          <div class="bio-highlight">
+            🎙️ <strong>Core belief:</strong> “Journalism is not a career, it's a public trust. Speak for those who cannot speak for themselves.”
+          </div>
+        </div>
+        <div style="flex: 0.8; text-align: center;">
+          <div style="background: #e5f0f8; border-radius: 42px; padding: 24px; text-align: center;">
+            <div style="font-size: 4rem;">🎥⚡</div>
+            <p style="font-weight: 600; margin-top: 12px;">"Unfiltered. Unbroken."</p>
+            <span class="stat-badge">5M+ digital followers</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Contributions & pillars -->
+  <section style="background: #fafdff;">
+    <div class="container">
+      <h2>Journalistic Pillars</h2>
+      <div class="grid-2" style="margin-top: 20px;">
+        <div class="card">
+          <div class="card-icon">📡</div>
+          <h3>Digital Revolution</h3>
+          <p>Pioneering digital journalism in Pakistan — leveraging social media to bypass censorship and deliver raw truth straight to people.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">⚖️</div>
+          <h3>Accountability Movement</h3>
+          <p>Investigative reports exposing corruption and institutional failures, triggering national conversations and reforms.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🎙️</div>
+          <h3>Talk Shows with Impact</h3>
+          <p>Hard-hitting political analysis, debates, and town halls that give a platform to the marginalized and whistleblowers.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🌍</div>
+          <h3>Global Recognition</h3>
+          <p>Featured by international press freedom organizations as a brave voice standing against suppression.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- career milestones : defining moments as achievements -->
+  <section>
+    <div class="container">
+      <h2>Defining Moments & Impact</h2>
+      <div class="milestone-list">
+        <div class="milestone-item">
+          <div class="milestone-number">01</div>
+          <div class="milestone-text">Launched “Truth Track” — exposing major governance lapses that led to judicial notices and policy changes.</div>
+        </div>
+        <div class="milestone-item">
+          <div class="milestone-number">02</div>
+          <div class="milestone-text">First journalist to livestream grassroots protests extensively, bridging gap between citizens and media narratives.</div>
+        </div>
+        <div class="milestone-item">
+          <div class="milestone-number">03</div>
+          <div class="milestone-text">Survived legal and physical threats standing by his reporting; earned PEN America’s stand for free press.</div>
+        </div>
+        <div class="milestone-item">
+          <div class="milestone-number">04</div>
+          <div class="milestone-text">Amplified missing persons’ cases, leading to parliamentary inquiries and renewed public focus.</div>
+        </div>
+        <div class="milestone-item">
+          <div class="milestone-number">05</div>
+          <div class="milestone-text">Regularly featured among “Top 10 Most Influential Pakistani Personalities” for democratic empowerment.</div>
+        </div>
+      </div>
+      <div class="quote-block">
+        <div class="quote-text">“The pen is mightier when it speaks with courage. Imran Riaz Khan embodies that spirit — fearless, relentless, and truth-driven.”</div>
+        <div class="quote-author">— Pakistan Press Freedom Network</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Philosophy & core values section-->
+  <section style="background: #f6fafd;">
+    <div class="container">
+      <h2>Core Philosophy</h2>
+      <div class="grid-2" style="gap: 28px;">
+        <div class="card" style="text-align: left; background: white;">
+          <div class="card-icon">🔍</div>
+          <h3>Radical Transparency</h3>
+          <p>Imran believes that sunlight is the best disinfectant. Every broadcast focuses on documenting truth without filters, even when controversial.</p>
+        </div>
+        <div class="card" style="text-align: left; background: white;">
+          <div class="card-icon">🤝</div>
+          <h3>People’s Journalism</h3>
+          <p>He pioneered the concept of “citizen-first reporting,” where viewers are partners in the journalistic process.</p>
+        </div>
+        <div class="card" style="text-align: left; background: white;">
+          <div class="card-icon">🛡️</div>
+          <h3>Defiance & Resilience</h3>
+          <p>Despite state pressure and personal adversity, he remains unwavering — inspiring a new generation of independent reporters.</p>
+        </div>
+      </div>
+      <hr />
+      <div style="text-align: center; margin-top: 32px;">
+        <span style="background: #e2f0f9; padding: 12px 30px; border-radius: 100px; font-weight: 600;">📢 “A lie can travel halfway around the world, but the truth will chase it down.” — Imran Riaz Khan</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recognition & stats: dynamic testimony -->
+  <section style="padding-bottom: 60px;">
+    <div class="container">
+      <h2>Recognition & Reach</h2>
+      <div class="grid-2" style="gap: 20px; margin-top: 15px;">
+        <div class="card" style="background: #ffffff; text-align: center;">
+          <div class="card-icon" style="font-size: 3rem;">🏅</div>
+          <h3>International Honors</h3>
+          <p>Recipient of "Courage in Journalism Award" (2023) & nominee for CPJ International Press Freedom Awards.</p>
+        </div>
+        <div class="card" style="background: #ffffff; text-align: center;">
+          <div class="card-icon" style="font-size: 3rem;">📱</div>
+          <h3>Digital Footprint</h3>
+          <p>Over 3.2 million YouTube subscribers & 2+ million combined followers across platforms. Each video sparks national debate.</p>
+        </div>
+        <div class="card" style="background: #ffffff; text-align: center;">
+          <div class="card-icon" style="font-size: 3rem;">🗣️</div>
+          <h3>Voice of Youth</h3>
+          <p>Consistently voted as most trusted journalist by under-35 demographics in independent polls.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer / Connect Section -->
+  <footer id="connect-section">
+    <div class="container">
+      <div style="max-width: 720px; margin: 0 auto;">
+        <h2 style="color: #f2f9ff; margin-bottom: 20px; display: inline-block; background: none;">Stand with Truth</h2>
+        <div style="height: 3px; width: 80px; background: #4797c2; margin: 0 auto 32px auto;"></div>
+        <p style="margin-bottom: 24px; font-size: 1.05rem;">Follow Imran Riaz Khan’s ongoing fight for transparency, exclusive reports, and live updates. Join a movement that values integrity above all.</p>
+        <div class="social-links">
+          <a href="#" class="social-icon" aria-label="X / Twitter">𝕏</a>
+          <a href="#" class="social-icon" aria-label="YouTube">📺</a>
+          <a href="#" class="social-icon" aria-label="Instagram">📱</a>
+          <a href="#" class="social-icon" aria-label="Facebook">📘</a>
+        </div>
+        <div class="contact-email">
+          ✉️ connect@imranriazkhan.com (press & media)
+        </div>
+        <p style="margin-top: 44px; font-size: 0.85rem; opacity: 0.75;">© 2026 — Imran Riaz Khan | Independent Journalism Initiative. All rights reserved.</p>
+        <p style="font-size: 0.8rem; margin-top: 12px;">Dedicated to fearless reporting | One-page tribute for truth-seekers</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
